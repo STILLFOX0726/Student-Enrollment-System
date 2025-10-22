@@ -1,0 +1,5 @@
+{"student_number": "2021001", "name": "Juan dela Cruz", "year": "3rd Year", "degree": "BS Computer Science", "email": "2021001@mocku.edu.ph", "password": "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f"}
+{"student_number": "2021002", "name": "Maria Santos", "year": "2nd Year", "degree": "BS Information Technology", "email": "2021002@mocku.edu.ph", "password": "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f"}
+{"student_number": "2021003", "name": "Pedro Reyes", "year": "4th Year", "degree": "BS Computer Engineering", "email": "2021003@mocku.edu.ph", "password": "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f"}
+{"student_number": "2022001", "name": "Ana Garcia", "year": "2nd Year", "degree": "BS Computer Science", "email": "2022001@mocku.edu.ph", "password": "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f"}
+{"student_number": "2022002", "name": "Carlos Mendoza", "year": "1st Year", "degree": "BS Information Technology", "email": "2022002@mocku.edu.ph", "password": "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f"}

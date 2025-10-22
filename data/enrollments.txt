@@ -1,0 +1,3 @@
+{"student_number": "2021001", "course_code": "CS101", "enrollment_date": "2025-10-22 00:00:00"}
+{"student_number": "2021001", "course_code": "CS101", "enrollment_date": "2025-10-22 00:00:00"}
+{"student_number": "2021002", "course_code": "CS101", "enrollment_date": "2025-10-22 15:33:51"}

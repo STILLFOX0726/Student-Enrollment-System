@@ -1,0 +1,6 @@
+{"course_code": "CS201", "course_name": "Data Structures and Algorithms", "department": "Computer Science", "units": 3}
+{"course_code": "CS301", "course_name": "Database Management Systems", "department": "Computer Science", "units": 3}
+{"course_code": "IT101", "course_name": "Web Development Fundamentals", "department": "Information Technology", "units": 3}
+{"course_code": "CE101", "course_name": "Digital Logic Design", "department": "Computer Engineering", "units": 4}
+{"course_code": "MATH101", "course_name": "Calculus I", "department": "Mathematics", "units": 3}
+{"course_code": "ENG101", "course_name": "Technical Writing", "department": "English", "units": 2}
