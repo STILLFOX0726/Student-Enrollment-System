@@ -28,7 +28,7 @@ def test_student_authentication():
     
     wrong_email = authenticate_student('2021001', 'wrong@mocku.edu.ph', 'password123')
     if not wrong_email:
-        print("✓ Invalid email correctly rejected")
+        print(" Invalid email correctly rejected")
     else:
         print("Invalid email incorrectly accepted")
         return False
