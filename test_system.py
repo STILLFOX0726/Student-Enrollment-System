@@ -11,26 +11,26 @@ def test_student_authentication():
     
     student = authenticate_student('2021001', '2021001@mocku.edu.ph', 'password123')
     if student:
-        print(f"✓ Authentication successful for {student['name']}")
+        print(f" Authentication successful for {student['name']}")
         print(f"  Email: {student['email']}")
         print(f"  Year: {student['year']}")
         print(f"  Degree: {student['degree']}")
     else:
-        print("✗ Authentication failed")
+        print("Authentication failed")
         return False
     
     invalid = authenticate_student('2021001', '2021001@mocku.edu.ph', 'wrongpassword')
     if not invalid:
-        print("✓ Invalid password correctly rejected")
+        print("Invalid password correctly rejected")
     else:
-        print("✗ Invalid password incorrectly accepted")
+        print("Invalid password incorrectly accepted")
         return False
     
     wrong_email = authenticate_student('2021001', 'wrong@mocku.edu.ph', 'password123')
     if not wrong_email:
         print("✓ Invalid email correctly rejected")
     else:
-        print("✗ Invalid email incorrectly accepted")
+        print("Invalid email incorrectly accepted")
         return False
     
     return True
@@ -39,7 +39,7 @@ def test_course_loading():
     print("\n=== Testing Course Loading ===")
     
     courses = load_courses()
-    print(f"✓ Loaded {len(courses)} courses")
+    print(f"Loaded {len(courses)} courses")
     
     if len(courses) > 0:
         sample = list(courses.values())[0]
@@ -52,7 +52,7 @@ def test_student_loading():
     print("\n=== Testing Student Loading ===")
     
     students = load_students()
-    print(f"✓ Loaded {len(students)} students")
+    print(f"Loaded {len(students)} students")
     
     if len(students) > 0:
         sample = list(students.values())[0]
@@ -63,9 +63,9 @@ def test_student_loading():
     all_valid = all(expected_email_format in s['email'] for s in students.values())
     
     if all_valid:
-        print(f"✓ All student emails use {expected_email_format} format")
+        print(f"All student emails use {expected_email_format} format")
     else:
-        print(f"✗ Some student emails don't use {expected_email_format} format")
+        print(f"Some student emails don't use {expected_email_format} format")
         return False
     
     return len(students) > 0
@@ -85,13 +85,13 @@ def test_course_crud():
     
     courses['TEST101'] = test_course
     save_courses(courses)
-    print("✓ Course added")
+    print("Course added")
     
     courses = load_courses()
     if 'TEST101' in courses:
-        print("✓ Course persisted to file")
+        print("Course persisted to file")
     else:
-        print("✗ Course not found after reload")
+        print("Course not found after reload")
         return False
     
     courses['TEST101']['course_name'] = 'Updated Test Course'
@@ -100,24 +100,24 @@ def test_course_crud():
     
     courses = load_courses()
     if courses['TEST101']['course_name'] == 'Updated Test Course':
-        print("✓ Update persisted to file")
+        print("Update persisted to file")
     else:
-        print("✗ Update not saved correctly")
+        print("Update not saved correctly")
         return False
     
     del courses['TEST101']
     save_courses(courses)
-    print("✓ Course deleted")
+    print("Course deleted")
     
     courses = load_courses()
     if 'TEST101' not in courses:
-        print("✓ Deletion persisted to file")
+        print("Deletion persisted to file")
     else:
-        print("✗ Course still exists after deletion")
+        print("Course still exists after deletion")
         return False
     
     if len(courses) == original_count:
-        print(f"✓ Course count restored to {original_count}")
+        print(f"Course count restored to {original_count}")
     
     return True
 
@@ -139,20 +139,20 @@ def test_enrollment():
     
     enrollments['2021001'].append(test_enrollment)
     save_enrollments(enrollments)
-    print("✓ Enrollment added")
+    print("Enrollment added")
     
     enrollments = load_enrollments()
     if '2021001' in enrollments and len(enrollments['2021001']) > original_count:
-        print("✓ Enrollment persisted to file")
+        print("Enrollment persisted to file")
         
         enrolled_courses = [e['course_code'] for e in enrollments['2021001']]
         if 'CS101' in enrolled_courses:
-            print("✓ Correct course enrolled")
+            print("Correct course enrolled")
         else:
-            print("✗ Course not found in enrollments")
+            print("Course not found in enrollments")
             return False
     else:
-        print("✗ Enrollment not saved correctly")
+        print("Enrollment not saved correctly")
         return False
     
     return True
@@ -164,19 +164,19 @@ def test_data_file_format():
     
     for file_path in files:
         if os.path.exists(file_path):
-            print(f"✓ {file_path} exists")
+            print(f"{file_path} exists")
             
             with open(file_path, 'r') as f:
                 lines = f.readlines()
                 if len(lines) > 0:
                     try:
                         data = json.loads(lines[0].strip())
-                        print(f"  ✓ Valid JSON format")
+                        print(f"Valid JSON format")
                     except json.JSONDecodeError:
-                        print(f"  ✗ Invalid JSON format")
+                        print(f"Invalid JSON format")
                         return False
         else:
-            print(f"✗ {file_path} does not exist")
+            print(f" {file_path} does not exist")
             return False
     
     return True
@@ -201,7 +201,7 @@ def main():
             result = test_func()
             results.append((test_name, result))
         except Exception as e:
-            print(f"\n✗ {test_name} failed with error: {e}")
+            print(f"\n {test_name} failed with error: {e}")
             results.append((test_name, False))
     
     print("\n" + "="*60)
@@ -212,16 +212,16 @@ def main():
     total = len(results)
     
     for test_name, result in results:
-        status = "✓ PASS" if result else "✗ FAIL"
+        status = " PASS" if result else " FAIL"
         print(f"{status}: {test_name}")
     
     print("-"*60)
     print(f"Total: {passed}/{total} tests passed")
     
     if passed == total:
-        print("\n🎉 All tests passed successfully!")
+        print("\n All tests passed successfully!")
     else:
-        print(f"\n⚠ {total - passed} test(s) failed")
+        print(f"\n {total - passed} test(s) failed")
     
     return passed == total
 
