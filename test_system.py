@@ -96,7 +96,7 @@ def test_course_crud():
     
     courses['TEST101']['course_name'] = 'Updated Test Course'
     save_courses(courses)
-    print("✓ Course updated")
+    print(" Course updated")
     
     courses = load_courses()
     if courses['TEST101']['course_name'] == 'Updated Test Course':
